@@ -20,10 +20,8 @@ function Home() {
         }
         if(value !== ""){
             load()
-
-            setNone(false)
-            console.log(none)
         }
+        console.log(data)
 
     },[value]) 
     const handleChange = (vsalue)=>{
@@ -33,18 +31,21 @@ function Home() {
     if(loaded){
         return (
             // @ts-ignore
-            <div className="input-group mb-3">
+            <div>
+            <div>
+
                 {/* @ts-ignore*/}
-                <span className="input-group-text" id="basic-addon1"></span>
+                <input value = {value} placeholder="Enter the Element,Atomic symbol or number" onChange={(value)=>handleChange(value)} className="form-control" style= {{"width":400}}/>
                 {/* @ts-ignore*/}
-                <input style = {{color:"green"}}input value = {value} placeholder="Enter the Element,Atomic symbol or number" onChange={(value)=>handleChange(value)} className="form-control"/>
-                {/* @ts-ignore*/}
-                {()=>(
-                    <div>
-                        <p>HEllo</p>
-                    </div>
-                )}
+              
                 
+            </div>
+                <div>
+                    <p>{data[0]}</p>
+                    <p>{data[1]}</p>
+                    <p>{data[2]}</p>
+                    <p>{data[3]}</p>
+                </div>
             </div>
         )
     }

@@ -19,9 +19,8 @@ function Home() {
         };
         if (value !== "") {
             load();
-            setNone(false);
-            console.log(none);
         }
+        console.log(data);
     }, [value]);
     const handleChange = (vsalue) => {
         setValue(vsalue.target.value);
@@ -30,11 +29,14 @@ function Home() {
     if (loaded) {
         return (
         // @ts-ignore
-        React.createElement("div", { className: "input-group mb-3" },
-            React.createElement("span", { className: "input-group-text", id: "basic-addon1" }),
-            React.createElement("input", { style: { color: "green" }, input: true, value: value, placeholder: "Enter the Element,Atomic symbol or number", onChange: (value) => handleChange(value), className: "form-control" }),
-            () => (React.createElement("div", null,
-                React.createElement("p", null, "HEllo")))));
+        React.createElement("div", null,
+            React.createElement("div", null,
+                React.createElement("input", { value: value, placeholder: "Enter the Element,Atomic symbol or number", onChange: (value) => handleChange(value), className: "form-control", style: { "width": 400 } })),
+            React.createElement("div", null,
+                React.createElement("p", null, data[0]),
+                React.createElement("p", null, data[1]),
+                React.createElement("p", null, data[2]),
+                React.createElement("p", null, data[3]))));
     }
     else {
         return (
