@@ -1,0 +1,15 @@
+#root{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex: 100%;
+}
+::-webkit-scrollbar {
+    background-color: peachpuff;
+    width: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: tomato;
+  }
