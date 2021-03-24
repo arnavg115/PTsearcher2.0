@@ -5,17 +5,30 @@ function Home() {
     // @ts-ignore
     const [value,setValue] = React.useState("")
     // @ts-ignore
+    const [data, setData] = React.useState({})
+    const [none,setNone] = React.useState(true)
+    // @ts-ignore
     React.useState(()=>{
         setTimeout(()=>{
             setLoaded(true);
         },1000)
     },[])
-    // @ts-ignore
     React.useEffect(()=>{
-        const unsub = console.log(value)
-    },[value])
-    const handleChange = (value)=>{
-        setValue(value.target.value.toString())
+        const load =  async ()=>{
+            const data = await axios.get('/query/'+value);
+            setData(data.data)
+        }
+        if(value !== ""){
+            load()
+
+            setNone(false)
+            console.log(none)
+        }
+
+    },[value]) 
+    const handleChange = (vsalue)=>{
+        setValue(vsalue.target.value)
+        // @ts-ignore
     }
     if(loaded){
         return (
@@ -25,6 +38,13 @@ function Home() {
                 <span className="input-group-text" id="basic-addon1"></span>
                 {/* @ts-ignore*/}
                 <input style = {{color:"green"}}input value = {value} placeholder="Enter the Element,Atomic symbol or number" onChange={(value)=>handleChange(value)} className="form-control"/>
+                {/* @ts-ignore*/}
+                {()=>(
+                    <div>
+                        <p>HEllo</p>
+                    </div>
+                )}
+                
             </div>
         )
     }
@@ -34,8 +54,7 @@ function Home() {
             <div>
                 {/* @ts-ignore*/}
                 <p>Loading</p>
-                {/* @ts-ignore*/}
-                <p>Bruh</p>
+
             </div>
         )
     }

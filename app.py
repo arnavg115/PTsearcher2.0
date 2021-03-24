@@ -1,5 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask.helpers import send_file
+from utilities import fuzzy
+
 app = Flask(__name__)
 @app.route('/')
 def main():
@@ -8,6 +10,10 @@ def main():
 @app.route("/compiled/<file>")
 def sendjs( file):
     return send_file(f"compiledjs/{file}")
+
+@app.route("/query/<query>")
+def query(query):
+    return jsonify(fuzzy.matcher(query)[0][0])
 
 if '__main__' == __name__:
     app.run(debug=True)
