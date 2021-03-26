@@ -22,4 +22,4 @@ def query(query):
     return jsonify(fuzzy.matcher(query)[0][0])
 
 if '__main__' == __name__:
-    app.run(debug=True)
+    app.run(debug=True,port = 5000, host="0.0.0.0")
