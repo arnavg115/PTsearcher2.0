@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"npx babel --watch src --out-dir compiledjs --presets react-app/prod"
+    "start":"npx babel --watch src --out-dir compiledjs --presets react-app/prod",
+    "comp":"tsc"
   },
   "repository": {
     "type": "git",

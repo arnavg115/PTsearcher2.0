@@ -7,9 +7,15 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
+
+
 @app.route("/compiled/<file>")
 def sendjs( file):
     return send_file(f"compiledjs/{file}")
+
+@app.route("/compiled/components/<file>")
+def sendcomp(file):
+    return send_file(f"compiledjs/components/{file}")
 
 @app.route("/query/<query>")
 def query(query):
