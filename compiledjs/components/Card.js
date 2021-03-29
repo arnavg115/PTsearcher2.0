@@ -1,5 +1,7 @@
 export const Card = (props) => {
-    return (React.createElement("div", { className: "card", style: { textAlign: "center", paddingBottom: 20, paddingTop: 20, borderRadius: 20, } },
+    return (
+    // @ts-ignore
+    React.createElement("div", { className: "card", style: { textAlign: "center", paddingBottom: 20, paddingTop: 20, borderRadius: 20, } },
         React.createElement("h1", null, props.info[2]),
         React.createElement("p", null,
             "Atomic Number: ",

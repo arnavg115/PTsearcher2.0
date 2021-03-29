@@ -8,6 +8,7 @@ function Home() {
     const [value,setValue] = React.useState("")
     // @ts-ignore
     const [data, setData] = React.useState({})
+    // @ts-ignore
     const [none, setNone] = React.useState(true)
 
     // @ts-ignore
@@ -22,6 +23,7 @@ function Home() {
         }
 
     },[value])
+    // @ts-ignore
     React.useEffect(()=>{
         if(value === ""){
             setNone(true)
@@ -37,6 +39,7 @@ function Home() {
     }
     const card = ()=>{
         if(!none){
+            // @ts-ignore
             return <Card info={data}/>
         }
         else{
@@ -47,13 +50,15 @@ function Home() {
         return (
             // @ts-ignore
             <div>
-            <div>
-                <input value = {value} placeholder="  Enter the Element, Atomic symbol or number" onChange={(value)=>handleChange(value)} className="form-control" style= {{width:400, borderRadius:20 }}/>
-            
-            </div>
+                {/* @ts-ignore */}
+                <div>
+                    {/* @ts-ignore */}
+                    <input value = {value} placeholder="  Enter the Element, Atomic symbol or number" onChange={(value)=>handleChange(value)} className="form-control" style= {{width:400, borderRadius:20 }}/>
+                
+                </div>
+                {/* @ts-ignore */}
                 <div style={{height:30}}></div>
                 {card()}
-
             </div>
         )
     }

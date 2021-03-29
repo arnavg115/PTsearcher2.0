@@ -6,6 +6,7 @@ function Home() {
     const [value, setValue] = React.useState("");
     // @ts-ignore
     const [data, setData] = React.useState({});
+    // @ts-ignore
     const [none, setNone] = React.useState(true);
     // @ts-ignore
     React.useEffect(() => {
@@ -18,6 +19,7 @@ function Home() {
             load();
         }
     }, [value]);
+    // @ts-ignore
     React.useEffect(() => {
         if (value === "") {
             setNone(true);
@@ -32,6 +34,7 @@ function Home() {
     };
     const card = () => {
         if (!none) {
+            // @ts-ignore
             return React.createElement(Card, { info: data });
         }
         else {
