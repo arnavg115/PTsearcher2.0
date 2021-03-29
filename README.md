@@ -25,4 +25,4 @@ pip install -r requirements.txt
 python app.py
 ```
 
-**note you may have to change the python to python3 and pip to pip3.*
+**note you may have to change python to python3 and pip to pip3.*
